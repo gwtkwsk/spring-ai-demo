@@ -6,17 +6,12 @@
 ollama run llama3.1:8b
 ```
 
-## Verify it's running
+## Run the app
 
 ```
-curl "http://localhost:11434/api/chat" -d '{
-  "model": "llama3.1:8b",
-  "stream": false,
-  "messages": [
-    {
-      "role": "user",
-      "content": "why is the sky blue?"
-    }
-  ]
-}'
+./gradlew bootRun
 ```
+
+## Chat with LLM
+
+Use the `requests.http` file.
