@@ -1,0 +1,6 @@
+### Chat
+# @name chat
+POST {{baseUrl}}/chat/1
+Content-Type: text/plain
+
+Who are you?

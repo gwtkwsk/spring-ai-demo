@@ -1,3 +1,10 @@
 spring:
-    application:
-        name: springaidemo
+  ai:
+    ollama:
+      init:
+        pull-model-strategy: when_missing
+        embedding:
+          include: false
+      chat:
+        options:
+          model: llama3.1:8b
