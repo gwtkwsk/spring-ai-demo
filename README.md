@@ -19,13 +19,24 @@ Use the `requests.http` file.
 ## Create Mongo database
 
 ```
-docker volume create springaidemo-data
+podman volume create springaidemo-data
 
 podman run -d \
-   --name springaidemo-mongo \
+  --name springaidemo-mongo \
   -e MONGO_INITDB_ROOT_USERNAME=admin \
   -e MONGO_INITDB_ROOT_PASSWORD=pass \
   -e MONGO_INITDB_DATABASE=springaidemo \
   -v springaidemo-data:/data/db \
+  -p 27017:27017 \
   mongo:8.2.3
+
+podman exec -it springaidemo-mongo mongosh -u admin -p pass
+
+use springaidemo
+
+db.createUser({
+  user: 'springaidemo',
+  pwd: 'pass',
+  roles: [{ role: 'readWrite', db: 'springaidemo' }]
+});
 ```
