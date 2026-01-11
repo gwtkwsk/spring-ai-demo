@@ -19,14 +19,14 @@ Use the `requests.http` file.
 ## Create Mongo database
 
 ```
-podman volume create springaidemo-data
+podman volume create springaidemo-mongo-data
 
 podman run -d \
   --name springaidemo-mongo \
   -e MONGO_INITDB_ROOT_USERNAME=admin \
   -e MONGO_INITDB_ROOT_PASSWORD=pass \
   -e MONGO_INITDB_DATABASE=springaidemo \
-  -v springaidemo-data:/data/db \
+  -v springaidemo-mongo-data:/data/db \
   -p 27017:27017 \
   mongo:8.2.3
 
@@ -40,3 +40,13 @@ db.createUser({
   roles: [{ role: 'readWrite', db: 'springaidemo' }]
 });
 ```
+
+## Create Qdrant database
+
+podman volume create springaidemo-qdrant-data
+
+podman run -d \
+  --name springaidemo-qdrant \
+  -p 6333:6333 -p 6334:6334 \
+  -v springaidemo-qdrant-data:/qdrant/storage \
+  qdrant/qdrant

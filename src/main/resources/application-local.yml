@@ -2,4 +2,14 @@ spring:
   data:
     mongodb:
       uri: mongodb://springaidemo:pass@localhost:27017/springaidemo?authSource=springaidemo
- 
+  ai:
+    vectorstore:
+      qdrant:
+        host: localhost
+        port: 6333
+        collection-name: springaidemo
+        initialize-schema: true
+
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: DEBUG
