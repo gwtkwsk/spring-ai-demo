@@ -26,7 +26,6 @@ dependencies {
 	implementation 'org.springframework.ai:spring-ai-advisors-vector-store'
 	implementation 'org.springframework.ai:spring-ai-rag'
 	implementation 'org.springframework.ai:spring-ai-starter-vector-store-qdrant'
-	implementation 'io.qdrant:client:1.16.2'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
