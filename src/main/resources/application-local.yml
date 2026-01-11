@@ -12,4 +12,5 @@ spring:
 
 logging:
   level:
-    org.springframework.ai.chat.client.advisor: DEBUG
+    org.springframework.ai: DEBUG
+    io.qdrant: DEBUG

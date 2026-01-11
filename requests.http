@@ -1,6 +1,15 @@
 ### Chat
 # @name chat
-POST {{baseUrl}}/chat/1
+POST {{baseUrl}}/chat/3
 Content-Type: text/plain
 
-Who are you?
+What can you say about contributions?
+
+### Import documents
+# @name import-documents
+POST {{baseUrl}}/etl
+Content-Type: application/json
+
+{
+    "path": "/home/grzegorz/Programowanie/Projekty/doc-repos/test-repo"
+}

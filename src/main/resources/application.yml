@@ -2,7 +2,6 @@ spring:
   ai:
     ollama:
       init:
-        pull-model-strategy: when_missing
         embedding:
           include: false
       chat:
@@ -10,3 +9,13 @@ spring:
           model: llama3.1:8b
       embedding:
         model: nomic-embed-text:v1.5
+
+app:
+  etl:
+    ignored-paths:
+      - .git
+      - .idea
+      - .vscode
+      - build
+      - dist
+      - node_modules
