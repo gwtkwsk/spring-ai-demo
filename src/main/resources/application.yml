@@ -8,3 +8,5 @@ spring:
       chat:
         options:
           model: llama3.1:8b
+      embedding:
+        model: nomic-embed-text:v1.5

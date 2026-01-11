@@ -4,6 +4,7 @@
 
 ```
 ollama run llama3.1:8b
+ollama pull nomic-embed-text:v1.5
 ```
 
 ## Run the app
