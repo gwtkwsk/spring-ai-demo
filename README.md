@@ -51,3 +51,5 @@ podman run -d \
   -p 6333:6333 -p 6334:6334 \
   -v springaidemo-qdrant-data:/qdrant/storage \
   qdrant/qdrant
+
+Qdrant dashboard is available at http://localhost:6333/dashboard
