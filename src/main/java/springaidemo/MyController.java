@@ -29,7 +29,7 @@ class MyController {
                 .maxMessages(10)
                 .build();
 
-        SearchRequest searchRequest = SearchRequest.builder().similarityThreshold(0.8d).topK(6).build();
+        SearchRequest searchRequest = SearchRequest.builder().similarityThreshold(0.3d).topK(10).build();
 
         this.chatClient = chatClientBuilder.clone()
                 .defaultAdvisors(
@@ -37,7 +37,8 @@ class MyController {
                         MessageChatMemoryAdvisor.builder(chatMemory).build(),
                         QuestionAnswerAdvisor.builder(vectorStore)
                                 .searchRequest(searchRequest)
-                                .build())
+                                .build()
+                )
                 .build();
     }
 

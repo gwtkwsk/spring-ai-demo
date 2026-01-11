@@ -1,6 +1,6 @@
 ### Chat
 # @name chat
-POST {{baseUrl}}/chat/3
+POST {{baseUrl}}/chat/7
 Content-Type: text/plain
 
 What can you say about contributions?
