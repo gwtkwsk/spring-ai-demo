@@ -5,7 +5,7 @@ spring:
   ai:
     vectorstore:
       qdrant:
-        host: localhost
+        host: springaidemo-qdrant
         port: 6334
         collection-name: springaidemo
         initialize-schema: true
