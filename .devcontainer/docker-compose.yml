@@ -1,0 +1,46 @@
+services:
+  devcontainer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - springaidemo-network
+    ports:
+      - 8080:8080
+    volumes:
+      - ../..:/workspaces:cached
+    command: sleep infinity
+
+  springaidemo-mongo:
+    image: mongo:8.2.3
+    networks:
+      - springaidemo-network
+    ports:
+      - 27017:27017
+    volumes:
+      - springaidemo-mongo-data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: pass
+      MONGO_INITDB_DATABASE: springaidemo
+    restart: unless-stopped
+
+  springaidemo-qdrant:
+    image: qdrant/qdrant:v1.16.3
+    networks:
+      - springaidemo-network
+    ports:
+      - 6333:6333
+      - 6334:6334
+    volumes:
+      - springaidemo-qdrant-data:/qdrant/storage
+    restart: unless-stopped
+  
+
+volumes:
+  springaidemo-mongo-data:
+  springaidemo-qdrant-data:
+
+networks:
+  springaidemo-network:
+    driver: bridge

@@ -1,0 +1,21 @@
+{
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "devcontainer",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "ms-vscode-remote.remote-containers",
+                "ms-azuretools.vscode-containers",
+                "humao.rest-client",
+                "vmware.vscode-boot-dev-pack",
+                "redhat.vscode-yaml",
+                "mongodb.mongodb-vscode"
+            ]
+        }
+    }
+}
