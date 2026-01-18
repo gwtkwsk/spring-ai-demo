@@ -1,7 +1,7 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://springaidemo:pass@localhost:27017/springaidemo?authSource=springaidemo
+      uri: mongodb://springaidemo:pass@springaidemo-mongo:27017
   ai:
     vectorstore:
       qdrant:
