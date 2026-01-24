@@ -8,7 +8,7 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - ../..:/workspaces:cached
+      - ../..:/workspaces:cached,Z
     command: sleep infinity
 
   springaidemo-mongo:
